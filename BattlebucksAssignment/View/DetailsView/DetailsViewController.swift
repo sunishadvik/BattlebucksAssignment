@@ -1,5 +1,4 @@
 //
-//  DetailsViewController.swift
 //  BattlebucksAssignment
 //
 //  Created by Sunish Ram on 28/09/24.
