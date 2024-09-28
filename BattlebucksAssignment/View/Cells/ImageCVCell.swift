@@ -1,6 +1,6 @@
 //
 //  ImageCVCell.swift
-//  Assignment_Buttlebucks_Sunish_Ram
+//  BattlebucksAssignment
 //
 //  Created by Sunish Ram on 28/09/24.
 //
@@ -35,7 +35,6 @@ class ImageCVCell: UICollectionViewCell {
         guard let imageUrlString = imgDetailsModelData?.thumbnailUrl, let imageUrl = URL(string: imageUrlString) else {
             return
         }
-        print(imageUrlString)
         imgView.loadImage(fromURL: imageUrl, placeHolderImage: kPlaceHolderImage)
     }
 

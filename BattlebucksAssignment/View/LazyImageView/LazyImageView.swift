@@ -1,6 +1,5 @@
 //
-//  LazyImageView.swift
-//  Assignment_Buttlebucks_Sunish_Ram
+//  BattlebucksAssignment
 //
 //  Created by Sunish Ram on 27/09/24.
 //
