@@ -1,6 +1,6 @@
 //
 //  HttpsUtility.swift
-//  Assignment_Buttlebucks_Sunish_Ram
+//  BattlebucksAssignment
 //
 //  Created by Sunish Ram on 27/09/24.
 //
@@ -13,11 +13,11 @@ struct Utility
     func fetchImageData<T:Decodable>(requestURL : URL,resultType : T.Type , completionHandler:@escaping(_ result:T?) -> Void)
     {
         var request = URLRequest(url: requestURL)
-        request.httpMethod = "GET"
+        request.httpMethod = kGET
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else{
-                print("invalid data")
+                print(kInvalidData)
                 return
             }
             let jsonDecoder = JSONDecoder()

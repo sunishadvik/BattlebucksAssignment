@@ -1,6 +1,6 @@
 //
 //  DetailsViewController.swift
-//  Assignment_Buttlebucks_Sunish_Ram
+//  BattlebucksAssignment
 //
 //  Created by Sunish Ram on 28/09/24.
 //

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     @IBOutlet weak var lblLoadingData: UILabel!
     @IBOutlet weak var CVImages: UICollectionView!
@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
-        lblLoadingData.text = "Loading..."
+        lblLoadingData.text = kLoading
         CVImages.isHidden = true
         CVImages.isPrefetchingEnabled = true
         CVImages.prefetchDataSource = self
@@ -24,18 +23,9 @@ class ViewController: UIViewController {
         self.registerNib()
         viewModel.getImageListData { isSucces in
             DispatchQueue.main.async { [weak self] in
- 
-                print("isSucces____:\(isSucces)")
-                
-                if isSucces
-                {
-                    self?.CVImages.isHidden = false
-                    self?.lblLoadingData.text = ""
-                    self?.CVImages.reloadData()
-                }else{
-                    self?.CVImages.isHidden = true
-                    self?.lblLoadingData.text = "Loading..."
-                }
+                self?.CVImages.isHidden = isSucces ? false : true
+                self?.lblLoadingData.text = isSucces ? "" : kLoading
+                self?.CVImages.reloadData()
             }
         }
     }
@@ -47,14 +37,3 @@ class ViewController: UIViewController {
     }
  
 }
-/*
- if isSucces
- {
-     self?.CVImages.isHidden = false
-     self?.lblLoadingData.text = ""
-     self?.CVImages.reloadData()
- }else{
-     self?.CVImages.isHidden = true
-     self?.lblLoadingData.text = "Loading..."
- }
- */
